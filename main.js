@@ -126,16 +126,22 @@ function animateCounter(el, target, suffix = '') {
   requestAnimationFrame(update);
 }
 
+// [CUSTOMIZE] The counter animation auto-detects numbers in trust badge text.
+// No changes needed here when customizing for a new client.
 const countersObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const trustBadges = document.querySelectorAll('.trust-text strong');
       trustBadges.forEach(badge => {
         const text = badge.textContent;
-        if (text.includes('1,400')) {
-          animateCounter(badge, 1400, '+');
-        } else if (text.includes('5.0')) {
-          animateCounter(badge, 5.0, ' Stars');
+        // Match patterns like "500+", "4.8 Stars", "5.0 Stars"
+        const decimalMatch = text.match(/^(\d+\.\d+)/);
+        const intMatch = text.match(/^([\d,]+)\+/);
+        if (decimalMatch) {
+          animateCounter(badge, parseFloat(decimalMatch[1]), ' Stars');
+        } else if (intMatch) {
+          const num = parseInt(intMatch[1].replace(/,/g, ''), 10);
+          animateCounter(badge, num, '+');
         }
       });
       countersObserver.disconnect();
