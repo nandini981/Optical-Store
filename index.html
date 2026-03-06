@@ -3,97 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ============================================================
-       🏪 TEMPLATE CUSTOMIZATION GUIDE
-       ============================================================
-       To use this template for a new optical store client, replace:
-
-       1. STORE_NAME        → e.g. "Sharma Opticals"
-       2. STORE_TAGLINE     → e.g. "Laxmi Nagar's Trusted Optician"
-       3. STORE_DESCRIPTION → Short paragraph about the store
-       4. STORE_ADDRESS     → Full street address
-       5. STORE_CITY        → City name (e.g. "Delhi", "Mumbai")
-       6. STORE_PHONE       → Phone number with country code
-       7. STORE_WHATSAPP    → WhatsApp number (91XXXXXXXXXX)
-       8. STORE_MAPS_URL    → Google Maps link to the store
-       9. STORE_MAPS_EMBED  → Google Maps embed iframe src URL
-      10. GOOGLE_RATING     → e.g. "4.8"
-      11. REVIEW_COUNT      → e.g. "900+"
-      12. YEARS_OF_TRUST    → e.g. "10+"
-      13. STORE_DOMAIN      → e.g. "sharmaopticals.in"
-      14. HERO_PHOTO / GALLERY PHOTOS → Replace images in /images/
-      15. CUSTOMER REVIEWS  → Replace review text, names, locations
-       ============================================================ -->
-
-  <!-- [CUSTOMIZE] Update title for each client -->
-  <title>Premium Optical Store – Best Optical Store in Your City</title>
-
-  <!-- [CUSTOMIZE] Update meta description for each client -->
-  <meta name="description" content="Premium Optical Store offers stylish eyeglasses, computerized eye testing, prescription lenses, sunglasses, and quick spectacle repair. Trusted by happy customers, highly rated on Google." />
-  <meta name="keywords" content="optical store near me, best optician, spectacles shop, eyeglasses store, computerized eye testing, spectacle repair" />
+  <title>AURUM OPTICS — Exclusive Luxury Eyewear Boutique</title>
+  <meta name="description" content="AURUM OPTICS — The world's most exclusive luxury eyewear boutique. Bespoke frames, precision optics, and an unparalleled personal shopping experience." />
+  <meta name="keywords" content="luxury eyewear, premium glasses Dubai, designer frames, bespoke eyewear, exclusive optical boutique" />
   <meta name="robots" content="index, follow" />
-
-  <!-- [CUSTOMIZE] Update OG tags for each client -->
-  <meta property="og:title" content="Premium Optical Store – Your City" />
-  <meta property="og:description" content="Trusted optical store. Premium eyewear, computerized eye testing, and fast repairs." />
+  <meta property="og:title" content="AURUM OPTICS — Luxury Eyewear" />
+  <meta property="og:description" content="Bespoke luxury eyewear. Crafted for the discerning few." />
   <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://aurum-optics.com/" />
 
-  <!-- [CUSTOMIZE] Update canonical URL for each client -->
-  <link rel="canonical" href="https://your-store-domain.com/" />
-
+  <!-- Luxury Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@200;300;400;500;600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- GSAP + ScrollTrigger + Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+  <!-- FAILSAFE: force-hide loader if JS crashes or CDN fails -->
+  <script>
+    (function() {
+      var MAX_WAIT = 4000;
+      setTimeout(function() {
+        var loader = document.getElementById('pageLoader');
+        if (loader && loader.style.display !== 'none' && !loader.classList.contains('hidden')) {
+          loader.style.transition = 'opacity 0.6s ease';
+          loader.style.opacity = '0';
+          document.body.style.overflow = '';
+          setTimeout(function() { loader.style.display = 'none'; }, 650);
+        }
+      }, MAX_WAIT);
+    })();
+  </script>
+
   <link rel="stylesheet" href="style.css" />
 
-  <!-- [CUSTOMIZE] Update schema markup for each client -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Premium Optical Store",
-    "description": "Premium optical store offering eyeglasses, sunglasses, computerized eye testing, and spectacle repair.",
+    "name": "AURUM OPTICS",
+    "description": "Exclusive luxury eyewear boutique offering bespoke frames, precision optics and personalised service.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Your Store Street Address",
-      "addressLocality": "Your City",
-      "addressRegion": "Your State",
-      "postalCode": "000000",
-      "addressCountry": "IN"
+      "streetAddress": "Sheikh Zayed Road",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
     },
-    "telephone": "+91-XXXXXXXXXX",
+    "telephone": "+971-XXXXXXXXXX",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "500"
+      "reviewCount": "800"
     },
-    "openingHours": "Mo-Su 09:00-21:00"
+    "openingHours": "Mo-Su 10:00-22:00"
   }
   </script>
 </head>
 <body>
 
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ===== PAGE LOADER ===== -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="loader-logo-text">AURUM</span>
+        <div class="loader-line"></div>
+        <span class="loader-logo-sub">OPTICS</span>
+      </div>
+      <div class="loader-progress">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== NAVBAR ===== -->
-  <!-- [CUSTOMIZE] Store Name in logo -->
   <header class="navbar" id="navbar">
-    <div class="container nav-inner">
-      <a href="#" class="logo">
-        <span class="logo-icon">👁</span>
-        <div>
-          <!-- [CUSTOMIZE] Replace with client store name (2 words recommended) -->
-          <span class="logo-name">Premium</span>
-          <span class="logo-sub">Optical Store</span>
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-mark">◈</span>
+        <div class="logo-text">
+          <span class="logo-name">AURUM</span>
+          <span class="logo-sub">OPTICS</span>
         </div>
       </a>
       <nav class="nav-links" id="navLinks">
-        <a href="#services">Services</a>
-        <a href="#collection">Collection</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <!-- [CUSTOMIZE] Replace phone number -->
-        <a href="tel:+91XXXXXXXXXX" class="btn btn-primary nav-cta">📞 Call Now</a>
+        <a href="#collection" class="nav-link">Collection</a>
+        <a href="#story" class="nav-link">Our Story</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#testimonials" class="nav-link">Clients</a>
+        <a href="#boutique" class="nav-link">Boutique</a>
+        <a href="#contact" class="nav-cta-link" id="nav-book-btn">Book a Consultation</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -101,513 +106,573 @@
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===== HERO SECTION ===== -->
   <section class="hero" id="home">
+    <!-- Cinematic video background -->
+    <div class="hero-video-wrap">
+      <img src="luxury_hero_bg.png" alt="Luxury eyewear" class="hero-bg-img" id="heroBg" />
+      <div class="hero-grain"></div>
+    </div>
     <div class="hero-overlay"></div>
-    <div class="hero-bg-image"></div>
-    <div class="container hero-content">
-      <div class="hero-badge">
-        <span class="star-icon">⭐</span>
-        <!-- [CUSTOMIZE] Replace with client's actual Google rating and review count -->
-        <span>5.0 Rating · 500+ Google Reviews</span>
+
+    <!-- Floating particles -->
+    <canvas class="hero-particles" id="particleCanvas"></canvas>
+
+    <div class="hero-content" id="heroContent">
+      <div class="hero-eyebrow" id="heroEyebrow">
+        <span class="hero-eyebrow-line"></span>
+        <span>Exclusive Eyewear Atelier</span>
+        <span class="hero-eyebrow-line"></span>
       </div>
-      <h1 class="hero-title">
-        Clear Vision.<br />
-        <span class="gradient-text">Stylish Frames.</span><br />
-        <!-- [CUSTOMIZE] Replace with client city/locality -->
-        Trusted Optical Store.
+      <h1 class="hero-title" id="heroTitle">
+        <span class="hero-line"><span class="split-word" data-text="Vision">Vision</span></span>
+        <span class="hero-line hero-line--italic"><span class="split-word" data-text="Elevated.">Elevated.</span></span>
       </h1>
-      <p class="hero-subtitle">
-        <!-- [CUSTOMIZE] Replace with client's tagline / city -->
-        Your city's most loved optical store — premium eyewear, computerized eye testing, and expert care. Walk in today.
+      <p class="hero-subtitle" id="heroSubtitle">
+        Where precision engineering meets timeless design.<br />
+        Bespoke luxury eyewear for those who see the world differently.
       </p>
-      <div class="hero-actions">
-        <!-- [CUSTOMIZE] Replace phone number -->
-        <a href="tel:+91XXXXXXXXXX" class="btn btn-primary btn-lg" id="hero-call">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10 19.79 19.79 0 012 1.32 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15z"/></svg>
-          Call Now
+      <div class="hero-actions" id="heroActions">
+        <a href="#collection" class="btn-luxury btn-gold magnetic-btn" id="hero-collection-btn">
+          <span>Explore Collection</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <!-- [CUSTOMIZE] Replace WhatsApp number (format: 91XXXXXXXXXX) -->
-        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20your%20eyewear%20collection." target="_blank" class="btn btn-whatsapp btn-lg" id="hero-whatsapp">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp Chat
-        </a>
-        <!-- [CUSTOMIZE] Replace with client's Google Maps link -->
-        <a href="https://maps.google.com/?q=Your+Store+Address,+Your+City" target="_blank" class="btn btn-outline btn-lg" id="hero-directions">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Get Directions
+        <a href="#contact" class="btn-luxury btn-ghost magnetic-btn" id="hero-consult-btn">
+          <span>Book a Consultation</span>
         </a>
       </div>
+      <div class="hero-scroll" id="heroScroll">
+        <div class="hero-scroll-line"></div>
+        <span>Scroll</span>
+      </div>
     </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll to explore</span>
-      <div class="scroll-arrow"></div>
-    </div>
-  </section>
 
-  <!-- ===== TRUST BADGES ===== -->
-  <!-- [CUSTOMIZE] Update numbers to match client's actual stats -->
-  <section class="trust-section">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-badge">
-          <div class="trust-icon">🏆</div>
-          <div class="trust-text">
-            <!-- [CUSTOMIZE] Replace with client's happy customer count -->
-            <strong>500+</strong>
-            <span>Happy Customers</span>
-          </div>
-        </div>
-        <div class="trust-badge">
-          <div class="trust-icon">⭐</div>
-          <div class="trust-text">
-            <!-- [CUSTOMIZE] Replace with client's Google rating -->
-            <strong>5.0 Stars</strong>
-            <span>Google Rating</span>
-          </div>
-        </div>
-        <div class="trust-badge">
-          <div class="trust-icon">💰</div>
-          <div class="trust-text">
-            <strong>Best Prices</strong>
-            <span>Affordable Eyewear</span>
-          </div>
-        </div>
-        <div class="trust-badge">
-          <div class="trust-icon">🔬</div>
-          <div class="trust-text">
-            <strong>Professional</strong>
-            <span>Eye Testing</span>
-          </div>
-        </div>
+    <!-- Floating stats -->
+    <div class="hero-stats" id="heroStats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">800<sup>+</sup></span>
+        <span class="hero-stat-label">Discerning Clients</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">5.0</span>
+        <span class="hero-stat-label">Google Rating</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">15<sup>+</sup></span>
+        <span class="hero-stat-label">Years of Mastery</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <!-- [CUSTOMIZE] Store description, stats, address link -->
-  <section class="about-section" id="about">
-    <div class="container about-grid">
-      <div class="about-image-wrapper">
-        <!-- [CUSTOMIZE] Replace with client's store / product photo -->
-        <img src="hero_eyeglasses.png" alt="Optical store display" class="about-img" />
-        <div class="about-badge-float">
-          <!-- [CUSTOMIZE] Replace with years of experience -->
-          <span class="big-num">10+</span>
-          <span>Years of Trust</span>
+  <!-- ===== MARQUEE STRIP ===== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Bespoke Frames</span><span class="marquee-dot">◈</span>
+      <span>Precision Optics</span><span class="marquee-dot">◈</span>
+      <span>Exclusive Collections</span><span class="marquee-dot">◈</span>
+      <span>Master Craftsmanship</span><span class="marquee-dot">◈</span>
+      <span>Luxury Eyewear</span><span class="marquee-dot">◈</span>
+      <span>Dubai's Finest</span><span class="marquee-dot">◈</span>
+      <span>Bespoke Frames</span><span class="marquee-dot">◈</span>
+      <span>Precision Optics</span><span class="marquee-dot">◈</span>
+      <span>Exclusive Collections</span><span class="marquee-dot">◈</span>
+      <span>Master Craftsmanship</span><span class="marquee-dot">◈</span>
+      <span>Luxury Eyewear</span><span class="marquee-dot">◈</span>
+      <span>Dubai's Finest</span><span class="marquee-dot">◈</span>
+    </div>
+  </div>
+
+  <!-- ===== BRAND STORY ===== -->
+  <section class="story-section" id="story" data-section="story">
+    <div class="story-container">
+      <div class="story-image-col gsap-reveal-left">
+        <div class="story-image-wrap">
+          <img src="luxury_storefront.png" alt="AURUM OPTICS boutique interior" class="story-img" data-speed="0.85" />
+          <div class="story-image-accent"></div>
+        </div>
+        <div class="story-float-badge gsap-reveal-up" data-delay="400">
+          <span class="story-badge-num">15<sup>+</sup></span>
+          <span class="story-badge-text">Years of <br/>Excellence</span>
         </div>
       </div>
-      <div class="about-content">
-        <span class="section-eyebrow">About Us</span>
-        <!-- [CUSTOMIZE] Replace with client city/locality -->
-        <h2 class="section-title">Your City's Most Trusted Optical Destination</h2>
-        <p>
-          <!-- [CUSTOMIZE] Replace with client store description (2-3 sentences about history & location) -->
-          Located in the heart of <strong>Your City</strong>, <strong>Premium Optical Store</strong> has been serving the community with top-quality eyewear and professional vision care for over a decade.
+      <div class="story-content-col gsap-reveal-right">
+        <div class="section-eyebrow-luxury">
+          <span class="eyebrow-line"></span>
+          <span>Our Heritage</span>
+        </div>
+        <h2 class="section-title-luxury gsap-split-title">
+          Crafted for Those <br/>
+          <em>Who Demand the Best</em>
+        </h2>
+        <p class="story-lead">
+          At AURUM OPTICS, every frame is a statement. Every lens is a masterpiece. We exist to serve the most discerning clients who understand that eyewear is not merely functional — it is the ultimate luxury accessory.
         </p>
-        <p>
-          We combine expert optometry with a curated selection of stylish frames, sunglasses, and prescription lenses — all at prices that won't break the bank. Our knowledgeable staff is dedicated to helping you find the perfect fit for your vision needs and personal style.
+        <p class="story-body">
+          Founded on the principle that vision excellence and aesthetic perfection are inseparable, our atelier combines Swiss precision engineering with Italian design philosophy. Each piece in our collection is curated from the world's most prestigious ateliers.
         </p>
-        <div class="about-stats">
-          <div class="stat">
-            <!-- [CUSTOMIZE] Replace with client review count -->
-            <strong>500+</strong>
-            <span>5-Star Reviews</span>
+        <div class="story-stats">
+          <div class="story-stat">
+            <span class="story-stat-num counter" data-target="800">0</span>
+            <span class="story-stat-suffix">+</span>
+            <span class="story-stat-label">Elite Clientele</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <!-- [CUSTOMIZE] Replace with client Google rating -->
-            <strong>5.0</strong>
-            <span>Google Rating</span>
+          <div class="story-stat-div"></div>
+          <div class="story-stat">
+            <span class="story-stat-num">5.0</span>
+            <span class="story-stat-suffix">★</span>
+            <span class="story-stat-label">Perfect Rating</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <strong>Daily</strong>
-            <span>Eye Tests</span>
+          <div class="story-stat-div"></div>
+          <div class="story-stat">
+            <span class="story-stat-num counter" data-target="200">0</span>
+            <span class="story-stat-suffix">+</span>
+            <span class="story-stat-label">Exclusive Frames</span>
           </div>
         </div>
-        <!-- [CUSTOMIZE] Replace with client's Google Maps link -->
-        <a href="https://maps.google.com/?q=Your+Store+Address,+Your+City" target="_blank" class="btn btn-primary">Get Directions →</a>
+        <a href="#contact" class="btn-luxury btn-gold story-cta">
+          <span>Arrange a Private Viewing</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== SERVICES ===== -->
-  <section class="services-section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">What We Offer</span>
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-desc">From complete eye examinations to the latest eyewear trends — we have everything you need under one roof.</p>
+  <!-- ===== PREMIUM EYEWEAR SHOWCASE ===== -->
+  <section class="collection-section" id="collection">
+    <div class="collection-container">
+      <div class="collection-header gsap-reveal-up">
+        <div class="section-eyebrow-luxury">
+          <span class="eyebrow-line"></span>
+          <span>The Collection</span>
+        </div>
+        <h2 class="section-title-luxury gsap-split-title">
+          Signature <em>Frames</em>
+        </h2>
+        <p class="collection-desc">Each frame is a work of art — handpicked from the world's most exclusive ateliers.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">🕶️</div>
-          <h3>Prescription Glasses</h3>
-          <p>Custom prescription eyeglasses crafted with precision. A wide range of frames for every face shape and budget.</p>
+
+      <!-- Horizontal scroll track -->
+      <div class="h-scroll-wrapper" id="hScrollWrapper">
+        <div class="h-scroll-track" id="hScrollTrack">
+      <div class="products-grid">
+        <div class="product-card gsap-stagger-card" data-cursor="View">
+          <div class="product-img-wrap">
+            <img src="luxury_product_1.png" alt="The Milano — Titanium Collection" class="product-img" />
+            <div class="product-shimmer"></div>
+            <div class="product-hover-overlay">
+              <a href="#contact" class="product-btn">Request Price</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Titanium Collection</span>
+            <h3 class="product-name">The Milano</h3>
+            <span class="product-tag">Limited Edition</span>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">🔬</div>
-          <h3>Eye Testing</h3>
-          <p>State-of-the-art computerized eye examination for accurate prescriptions in minutes. Fast, painless, and reliable.</p>
+
+        <div class="product-card gsap-stagger-card" data-cursor="View">
+          <div class="product-img-wrap">
+            <img src="luxury_product_2.png" alt="The Dubai — Sunglasses Collection" class="product-img" />
+            <div class="product-shimmer"></div>
+            <div class="product-hover-overlay">
+              <a href="#contact" class="product-btn">Request Price</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Sunglasses Collection</span>
+            <h3 class="product-name">The Dubai</h3>
+            <span class="product-tag">Exclusive</span>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">☀️</div>
-          <h3>Sunglasses Collection</h3>
-          <p>Trendy and polarized sunglasses from top brands. UV protection and style — because your eyes deserve both.</p>
+
+        <div class="product-card gsap-stagger-card" data-cursor="View">
+          <div class="product-img-wrap">
+            <img src="frames_collection.png" alt="The Riyadh — Gold Collection" class="product-img" />
+            <div class="product-shimmer"></div>
+            <div class="product-hover-overlay">
+              <a href="#contact" class="product-btn">Request Price</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Gold Collection</span>
+            <h3 class="product-name">The Riyadh</h3>
+            <span class="product-tag">Bespoke Available</span>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">🔧</div>
-          <h3>Frame Repair</h3>
-          <p>Quick and expert repair for broken frames, loose screws, and lens replacements. Same-day service available.</p>
+
+        <div class="product-card product-card--wide gsap-stagger-card" data-cursor="View">
+          <div class="product-img-wrap">
+            <img src="sunglasses_display.png" alt="The Versailles — Heritage Collection" class="product-img" />
+            <div class="product-shimmer"></div>
+            <div class="product-hover-overlay">
+              <a href="#contact" class="product-btn">Request Price</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Heritage Collection</span>
+            <h3 class="product-name">The Versailles</h3>
+            <span class="product-tag">New Arrival</span>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">📦</div>
-          <h3>In-Store Pickup</h3>
-          <p>Order your glasses and pick them up at our store at your convenience. Ready quickly.</p>
+      </div>
+      </div><!-- /h-scroll-track -->
+      </div><!-- /h-scroll-wrapper -->
+
+      <div class="collection-cta gsap-reveal-up">
+        <a href="#contact" class="btn-luxury btn-ghost-light magnetic-btn">
+          <span>View Full Catalogue</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARALLAX DIVIDER ===== -->
+  <div class="parallax-divider" id="parallaxDivider">
+    <div class="parallax-bg" id="parallaxBg" data-speed="0.4"></div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content gsap-reveal-up">
+      <blockquote class="parallax-quote">
+        "The eyes are the window to the soul.<br/>
+        <em>Let the frame be worthy of the view.</em>"
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===== LUXURY EXPERIENCE / SERVICES ===== -->
+  <section class="experience-section" id="experience">
+    <div class="experience-container">
+      <div class="experience-header gsap-reveal-up">
+        <div class="section-eyebrow-luxury">
+          <span class="eyebrow-line"></span>
+          <span>The Experience</span>
         </div>
-        <div class="service-card">
-          <div class="service-icon">👓</div>
-          <h3>Contact Lenses</h3>
-          <p>Wide selection of daily, monthly, and coloured contact lenses. Get expert fitting advice from our staff.</p>
+        <h2 class="section-title-luxury gsap-split-title">
+          Beyond <em>Eyewear</em>
+        </h2>
+        <p class="experience-desc">Every visit to AURUM OPTICS is a ritual of refinement — an experience designed to honour your time and surpass your expectations.</p>
+      </div>
+
+      <div class="experience-grid">
+        <div class="exp-card gsap-stagger-card">
+          <div class="exp-card-inner">
+            <div class="exp-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="exp-num">01</div>
+            <h3 class="exp-title">Private Eye Consultation</h3>
+            <p class="exp-desc">A private session with our master optometrist using the most advanced diagnostic technology. Accurate, meticulous, unhurried.</p>
+          </div>
+        </div>
+
+        <div class="exp-card gsap-stagger-card">
+          <div class="exp-card-inner">
+            <div class="exp-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="exp-num">02</div>
+            <h3 class="exp-title">Bespoke Frame Curation</h3>
+            <p class="exp-desc">Our style advisor personally curates a selection from our exclusive collection, matching your facial architecture and personal aesthetic.</p>
+          </div>
+        </div>
+
+        <div class="exp-card gsap-stagger-card">
+          <div class="exp-card-inner">
+            <div class="exp-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="exp-num">03</div>
+            <h3 class="exp-title">Custom Precision Lenses</h3>
+            <p class="exp-desc">Handcrafted lenses using the finest optical glass. Anti-reflective, scratch-proof, and individually calibrated for your prescription.</p>
+          </div>
+        </div>
+
+        <div class="exp-card gsap-stagger-card">
+          <div class="exp-card-inner">
+            <div class="exp-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="exp-num">04</div>
+            <h3 class="exp-title">Lifetime After-Care</h3>
+            <p class="exp-desc">Our commitment extends beyond your purchase. Complimentary cleaning, adjustment, and care — for the lifetime of your frames.</p>
+          </div>
+        </div>
+
+        <div class="exp-card gsap-stagger-card">
+          <div class="exp-card-inner">
+            <div class="exp-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div class="exp-num">05</div>
+            <h3 class="exp-title">Private Boutique Appointments</h3>
+            <p class="exp-desc">For select clients, we offer exclusive after-hours private appointments. The boutique, entirely yours.</p>
+          </div>
+        </div>
+
+        <div class="exp-card gsap-stagger-card">
+          <div class="exp-card-inner">
+            <div class="exp-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="exp-num">06</div>
+            <h3 class="exp-title">White Glove Delivery</h3>
+            <p class="exp-desc">Your finished eyewear, delivered in hand-crafted luxury packaging directly to your residence or office, anywhere in the city.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== EYEWEAR GALLERY ===== -->
-  <!-- [CUSTOMIZE] Replace images with client's actual store photos / eyewear photos -->
-  <section class="gallery-section" id="collection">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Eyewear Gallery</span>
-        <h2 class="section-title">Frames for Every Style</h2>
-        <p class="section-desc">Discover our curated selection of designer and affordable frames — something for everyone.</p>
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="testimonials-container">
+      <div class="testimonials-header gsap-reveal-up">
+        <div class="section-eyebrow-luxury light">
+          <span class="eyebrow-line"></span>
+          <span>Client Stories</span>
+        </div>
+        <h2 class="section-title-luxury light gsap-split-title">
+          Words from <em>Our Clients</em>
+        </h2>
       </div>
-      <div class="gallery-grid">
-        <!-- [CUSTOMIZE PHOTO 1] Large feature photo — replace src -->
-        <div class="gallery-item gallery-item--large">
-          <img src="hero_eyeglasses.png" alt="Premium eyeglasses collection" />
-          <div class="gallery-overlay">
-            <span>Premium Frames</span>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card gsap-stagger-card">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">An absolutely unparalleled experience. From the moment I walked in, I knew I was in the hands of true masters. My frames are the most exquisite thing I own.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">KA</div>
+            <div class="testimonial-info">
+              <strong>Khalid Al-Rashidi</strong>
+              <span>Business Executive, Dubai</span>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
           </div>
         </div>
-        <!-- [CUSTOMIZE PHOTO 2] -->
-        <div class="gallery-item">
-          <img src="frames_collection.png" alt="Stylish spectacle frames" />
-          <div class="gallery-overlay">
-            <span>Stylish Spectacles</span>
+
+        <div class="testimonial-card gsap-stagger-card">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">I have purchased eyewear from boutiques in Paris, Milan, and London. AURUM OPTICS surpasses them all. The personal attention is extraordinary.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LM</div>
+            <div class="testimonial-info">
+              <strong>Layla Mansouri</strong>
+              <span>Art Director, Abu Dhabi</span>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
           </div>
         </div>
-        <!-- [CUSTOMIZE PHOTO 3] -->
-        <div class="gallery-item">
-          <img src="sunglasses_display.png" alt="Sunglasses collection" />
-          <div class="gallery-overlay">
-            <span>Sunglasses</span>
+
+        <div class="testimonial-card gsap-stagger-card">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">The bespoke consultation was a revelation. They understood my style better than I did, and delivered frames that transformed how I present myself professionally.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SP</div>
+            <div class="testimonial-info">
+              <strong>Siddharth Patel</strong>
+              <span>Entrepreneur, Geneva</span>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
           </div>
         </div>
-        <!-- [CUSTOMIZE PHOTO 4] -->
-        <div class="gallery-item">
-          <img src="frames_collection.png" alt="Designer frames" />
-          <div class="gallery-overlay">
-            <span>Designer Frames</span>
+
+        <div class="testimonial-card gsap-stagger-card">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">The precision of the lenses, the weight of the titanium frame, the subtlety of the design — everything is perfect. This is what true luxury feels like.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">FJ</div>
+            <div class="testimonial-info">
+              <strong>Fatima Al-Jabri</strong>
+              <span>Socialite, Riyadh</span>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
           </div>
         </div>
-        <!-- [CUSTOMIZE PHOTO 5] -->
-        <div class="gallery-item">
-          <img src="sunglasses_display.png" alt="Sports sunglasses" />
-          <div class="gallery-overlay">
-            <span>Sports Eyewear</span>
-          </div>
-        </div>
+      </div>
+
+      <div class="testimonials-rating reveal-up">
+        <div class="rating-number">5.0</div>
+        <div class="rating-stars-row">★★★★★</div>
+        <div class="rating-desc">Based on 800+ verified reviews</div>
       </div>
     </div>
   </section>
 
-  <!-- ===== WHY CHOOSE US ===== -->
-  <!-- [CUSTOMIZE] Update "The [Store Name] Difference" heading -->
-  <section class="why-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Why Choose Us</span>
-        <h2 class="section-title">The Premium Optical Difference</h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-number">01</div>
-          <h3>Lightning-Fast Service</h3>
-          <p>Most glasses ready same day or within 24 hours. We value your time as much as your vision.</p>
+  <!-- ===== VISIT OUR BOUTIQUE ===== -->
+  <section class="boutique-section" id="boutique">
+    <div class="boutique-container">
+      <div class="boutique-info gsap-reveal-left">
+        <div class="section-eyebrow-luxury">
+          <span class="eyebrow-line"></span>
+          <span>Visit Us</span>
         </div>
-        <div class="why-card">
-          <div class="why-number">02</div>
-          <h3>Friendly Expert Staff</h3>
-          <p>Our experienced team guides you without pressure — finding the perfect match for your needs and budget.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-number">03</div>
-          <h3>Unbeatable Prices</h3>
-          <p>Premium quality eyewear at prices that fit every budget. No hidden costs, ever.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-number">04</div>
-          <h3>Widest Frame Selection</h3>
-          <p>100s of frames in different styles, colors, and materials — from classic to ultra-modern.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-number">05</div>
-          <!-- [CUSTOMIZE] Replace review count -->
-          <h3>Trusted by 500+</h3>
-          <p>Our customers keep coming back and referring their friends and family. That trust means everything to us.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-number">06</div>
-          <!-- [CUSTOMIZE] Replace with client's location -->
-          <h3>Prime Location</h3>
-          <p>Conveniently located in your area — easily accessible and well-connected.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <h2 class="section-title-luxury gsap-split-title">Our <em>Boutique</em></h2>
+        <p class="boutique-subtitle">Step into a world apart. Our boutique is designed to be a sanctuary of calm luxury, where time moves differently.</p>
 
-  <!-- ===== CUSTOMER REVIEWS ===== -->
-  <!--
-    [CUSTOMIZE] Replace with real reviews from the client's Google page.
-    For each review, update:
-    - Review text (review-text)
-    - Reviewer initials (reviewer-avatar)
-    - Reviewer name (strong tag)
-    - Reviewer location (span tag)
-  -->
-  <section class="reviews-section" id="reviews">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Customer Reviews</span>
-        <h2 class="section-title">What Our Customers Say</h2>
-        <div class="rating-summary">
-          <div class="stars-large">⭐⭐⭐⭐⭐</div>
-          <!-- [CUSTOMIZE] Replace rating and review count -->
-          <p class="rating-score">5.0 / 5.0 · Based on 500+ Google Reviews</p>
-        </div>
-      </div>
-      <div class="reviews-grid">
-
-        <!-- REVIEW 1 — [CUSTOMIZE] -->
-        <div class="review-card">
-          <div class="review-stars">⭐⭐⭐⭐⭐</div>
-          <p class="review-text">"Absolutely wonderful experience! Got my prescription glasses done in just a few hours. The staff was so helpful in choosing the right frames. Highly recommend to everyone!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">RS</div>
+        <div class="boutique-details">
+          <div class="boutique-detail-item">
+            <div class="boutique-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
             <div>
-              <strong>Rahul S.</strong>
-              <span>Local Customer</span>
+              <strong>Location</strong>
+              <p>Sheikh Zayed Road, Dubai<br/>United Arab Emirates</p>
+            </div>
+          </div>
+          <div class="boutique-detail-item">
+            <div class="boutique-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10 19.79 19.79 0 012 1.32 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15z"/></svg>
+            </div>
+            <div>
+              <strong>Enquiries</strong>
+              <p><a href="tel:+971XXXXXXXXXX">+971 XX XXX XXXX</a></p>
+            </div>
+          </div>
+          <div class="boutique-detail-item">
+            <div class="boutique-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <div>
+              <strong>Hours</strong>
+              <p>Daily · 10:00 AM – 10:00 PM<br/><em>Private appointments available</em></p>
             </div>
           </div>
         </div>
 
-        <!-- REVIEW 2 — [CUSTOMIZE] -->
-        <div class="review-card">
-          <div class="review-stars">⭐⭐⭐⭐⭐</div>
-          <p class="review-text">"Best optical shop in our area! The computerized eye test was quick and the results were spot on. Great collection of frames at very reasonable prices. Will definitely come back!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">PG</div>
-            <div>
-              <strong>Priya G.</strong>
-              <span>Local Customer</span>
-            </div>
-          </div>
+        <div class="boutique-ctas">
+          <a href="tel:+971XXXXXXXXXX" class="btn-luxury btn-gold magnetic-btn" id="boutique-call-btn">
+            <span>Call Us</span>
+          </a>
+          <a href="https://wa.me/971XXXXXXXXXX?text=I%20would%20like%20to%20arrange%20a%20private%20viewing." target="_blank" class="btn-luxury btn-ghost magnetic-btn" id="boutique-whatsapp-btn">
+            <span>WhatsApp</span>
+          </a>
+          <a href="https://maps.google.com/?q=Sheikh+Zayed+Road,+Dubai" target="_blank" class="btn-luxury btn-ghost magnetic-btn" id="boutique-directions-btn">
+            <span>Directions</span>
+          </a>
         </div>
-
-        <!-- REVIEW 3 — [CUSTOMIZE] -->
-        <div class="review-card">
-          <div class="review-stars">⭐⭐⭐⭐⭐</div>
-          <p class="review-text">"My family has been coming here for years. This is the most trusted optical store in the area. Excellent quality, genuine service, and the best prices you'll find anywhere!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">AV</div>
-            <div>
-              <strong>Amit V.</strong>
-              <span>Regular Customer</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- REVIEW 4 — [CUSTOMIZE] -->
-        <div class="review-card">
-          <div class="review-stars">⭐⭐⭐⭐⭐</div>
-          <p class="review-text">"Got my frame repaired in minutes. I was amazed by the speed and quality. They also helped me choose new lenses without any pressure. It's rare to find this level of honest service."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">SK</div>
-            <div>
-              <strong>Sunita K.</strong>
-              <span>Satisfied Customer</span>
-            </div>
-          </div>
-        </div>
-
       </div>
-      <div class="reviews-cta">
-        <!-- [CUSTOMIZE] Replace with actual Google Maps / Reviews link for client -->
-        <a href="https://www.google.com/maps/search/Premium+Optical+Store+Your+City" target="_blank" class="btn btn-outline">See All Reviews on Google →</a>
+      <div class="boutique-map gsap-reveal-right">
+        <div class="map-elegance">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178476960634!2d55.2707828!3d25.2048493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1cbe99e!2sSheikh%20Zayed%20Rd%2C%20Dubai!5e0!3m2!1sen!2sae!4v1709000000000!5m2!1sen!2sae"
+            width="100%"
+            height="480"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="AURUM OPTICS location"
+          ></iframe>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== VISIT OUR STORE ===== -->
-  <section class="visit-section" id="visit">
-    <div class="container visit-grid">
-      <div class="visit-info">
-        <span class="section-eyebrow">Find Us</span>
-        <h2 class="section-title">Visit Our Store</h2>
-        <div class="info-item">
-          <div class="info-icon">📍</div>
-          <div>
-            <strong>Address</strong>
-            <!-- [CUSTOMIZE] Replace with client's full store address -->
-            <p>Your Store Address, Your Area, Your City – 000000</p>
-          </div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon">📞</div>
-          <div>
-            <strong>Phone</strong>
-            <!-- [CUSTOMIZE] Replace phone number -->
-            <p><a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a></p>
-          </div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon">🕘</div>
-          <div>
-            <strong>Business Hours</strong>
-            <!-- [CUSTOMIZE] Replace with client's actual hours -->
-            <p>Open Daily · 9:00 AM – 9:00 PM</p>
-          </div>
-        </div>
-        <div class="visit-ctas">
-          <!-- [CUSTOMIZE] Replace phone and WhatsApp numbers -->
-          <a href="tel:+91XXXXXXXXXX" class="btn btn-primary">📞 Call Now</a>
-          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn btn-whatsapp">💬 WhatsApp</a>
-        </div>
-      </div>
-      <div class="map-wrapper">
-        <!--
-          [CUSTOMIZE] Google Map Embed
-          To get the embed URL for a client:
-          1. Search for the store on Google Maps
-          2. Click Share → Embed a map → Copy HTML
-          3. Paste the src="..." URL below
-        -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14000!2d77.2000!3d28.6500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zI!5e0!3m2!1sen!2sin!4v1709000000000!5m2!1sen!2sin"
-          width="100%"
-          height="400"
-          style="border:0; border-radius: 16px;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Store location on Google Maps">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT FORM ===== -->
+  <!-- ===== CONTACT / INQUIRY ===== -->
   <section class="contact-section" id="contact">
-    <div class="container contact-grid">
-      <div class="contact-info">
-        <span class="section-eyebrow">Get In Touch</span>
-        <h2 class="section-title">We'd Love to Hear from You</h2>
-        <p>Have a question about our frames, services, or pricing? Send us a message and our team will get back to you promptly.</p>
-        <div class="contact-quick-links">
-          <!-- [CUSTOMIZE] Replace phone numbers and address -->
-          <a href="tel:+91XXXXXXXXXX" class="quick-link">
-            <span>📞</span>
-            <div><strong>Call Us</strong><small>+91-XXXXXXXXXX</small></div>
-          </a>
-          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="quick-link">
-            <span>💬</span>
-            <div><strong>WhatsApp</strong><small>Chat Instantly</small></div>
-          </a>
-          <!-- [CUSTOMIZE] Replace Store Address & Maps link -->
-          <a href="https://maps.google.com/?q=Your+Store+Address,+Your+City" target="_blank" class="quick-link">
-            <span>📍</span>
-            <div><strong>Visit Store</strong><small>Your Area, Your City</small></div>
-          </a>
+    <div class="contact-container">
+      <div class="contact-header gsap-reveal-up">
+        <div class="section-eyebrow-luxury">
+          <span class="eyebrow-line"></span>
+          <span>Private Inquiry</span>
         </div>
+        <h2 class="section-title-luxury gsap-split-title">Begin Your <em>Journey</em></h2>
+        <p class="contact-desc">Reserve your complimentary private consultation. Our team will respond within two working hours.</p>
       </div>
-      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <form class="contact-form-luxury" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group-luxury">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group-luxury">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" placeholder="+971 XX XXX XXXX" required />
+          </div>
         </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+        <div class="form-group-luxury">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" />
         </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+        <div class="form-group-luxury">
+          <label for="message">How may we assist you?</label>
+          <textarea id="message" name="message" rows="4" placeholder="Describe your requirements, preferred appointment time, or any specific request..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
-        <div class="form-success" id="formSuccess">
-          ✅ Thank you! We'll contact you shortly.
+        <button type="submit" class="btn-luxury btn-gold btn-submit" id="form-submit-btn">
+          <span>Send Private Inquiry</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <div class="form-success-luxury" id="formSuccess">
+          Your inquiry has been received. We will be in touch shortly.
         </div>
       </form>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <!-- [CUSTOMIZE] Store name, address, phone, copyright year -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="#" class="logo logo-white">
-          <span class="logo-icon">👁</span>
+  <footer class="footer-luxury">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <a href="#home" class="footer-logo">
+          <span class="footer-logo-mark">◈</span>
           <div>
-            <!-- [CUSTOMIZE] Replace store name -->
-            <span class="logo-name">Premium</span>
-            <span class="logo-sub">Optical Store</span>
+            <span class="footer-logo-name">AURUM</span>
+            <span class="footer-logo-sub">OPTICS</span>
           </div>
         </a>
-        <!-- [CUSTOMIZE] Replace city name -->
-        <p>Your trusted optical store in Your City. Clear vision starts here.</p>
+        <p class="footer-brand-desc">Exclusive luxury eyewear for those who see the world at its finest. Dubai's most prestigious optical atelier.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <a href="#services">Services</a>
+      <div class="footer-nav-col">
+        <h4 class="footer-nav-title">Navigate</h4>
         <a href="#collection">Collection</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#story">Our Story</a>
+        <a href="#experience">Experience</a>
+        <a href="#testimonials">Clients</a>
+        <a href="#boutique">Boutique</a>
       </div>
-      <div class="footer-links">
-        <h4>Services</h4>
-        <a href="#services">Prescription Glasses</a>
-        <a href="#services">Eye Testing</a>
-        <a href="#services">Sunglasses</a>
-        <a href="#services">Frame Repair</a>
+      <div class="footer-nav-col">
+        <h4 class="footer-nav-title">Services</h4>
+        <a href="#experience">Private Consultations</a>
+        <a href="#experience">Bespoke Frames</a>
+        <a href="#experience">Custom Lenses</a>
+        <a href="#experience">After-Care</a>
+        <a href="#contact">Appointments</a>
       </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <!-- [CUSTOMIZE] Replace address, phone, hours -->
-        <p>📍 Your Store Address,<br />Your Area, Your City</p>
-        <p>📞 <a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a></p>
-        <p>🕘 Open Daily · 9:00 AM – 9:00 PM</p>
+      <div class="footer-contact-col">
+        <h4 class="footer-nav-title">Contact</h4>
+        <p>Sheikh Zayed Road<br/>Dubai, UAE</p>
+        <p><a href="tel:+971XXXXXXXXXX">+971 XX XXX XXXX</a></p>
+        <p>Daily · 10 AM – 10 PM</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <!-- [CUSTOMIZE] Replace store name and year -->
-      <p>© 2025 Premium Optical Store. All Rights Reserved. | Optical Store in Your City</p>
+    <div class="footer-bottom-luxury">
+      <p>© 2026 AURUM OPTICS. All Rights Reserved. | Luxury Eyewear Dubai</p>
+      <p>Crafted for Excellence</p>
     </div>
   </footer>
 
-  <!-- ===== STICKY MOBILE BUTTONS ===== -->
-  <!-- [CUSTOMIZE] Replace phone and WhatsApp numbers -->
-  <div class="sticky-cta" id="stickyCta">
-    <a href="tel:+91XXXXXXXXXX" class="sticky-btn sticky-call" id="sticky-call">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10 19.79 19.79 0 012 1.32 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15z"/></svg>
+  <!-- ===== STICKY MOBILE CTA ===== -->
+  <div class="sticky-luxury" id="stickyCta">
+    <a href="tel:+971XXXXXXXXXX" class="sticky-lux-btn" id="sticky-call">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10 19.79 19.79 0 012 1.32 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15z"/></svg>
       <span>Call</span>
     </a>
-    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20your%20eyewear%20collection." target="_blank" class="sticky-btn sticky-whatsapp" id="sticky-whatsapp">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <a href="https://wa.me/971XXXXXXXXXX" target="_blank" class="sticky-lux-btn sticky-lux-gold" id="sticky-whatsapp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span>WhatsApp</span>
     </a>
   </div>
