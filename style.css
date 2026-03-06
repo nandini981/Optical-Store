@@ -2071,11 +2071,23 @@ body.cursor-hover .cursor-ring {
 }
 
 /* ─── 3D Card base ─── */
+/* NOTE: No preserve-3d — it breaks overflow:hidden on image wraps,
+   causing images to render invisible. GSAP applies 3D via perspective
+   on the element itself instead. */
 .product-card,
 .testimonial-card,
 .exp-card {
-  transform-style: preserve-3d;
   will-change: transform;
+  /* transform-style is intentionally NOT preserve-3d */
+}
+
+/* ─── Counter: fixed-width to prevent layout jitter ─── */
+.story-stat-num,
+.counter {
+  display: inline-block;
+  min-width: 3.5ch;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
 }
 
 /* ─── GSAP-controlled initial states (prevent flicker) ─── */

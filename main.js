@@ -413,12 +413,17 @@ if (HAS_GSAP) {
 ═══════════════════════════════════════ */
 if (HAS_GSAP) {
   qsa('.counter').forEach(el => {
-    const obj = { val: 0 };
     const target = +el.dataset.target;
+    // Start from 65% of target so layout width doesn't shift much
+    const startVal = Math.floor(target * 0.65);
+    el.textContent = startVal;
+    const obj = { val: startVal };
     const st = HAS_ST ? { trigger: el, start: 'top 85%', toggleActions: 'play none none none' } : null;
     gsap.to(obj, {
-      val: target, duration: 2, ease: 'power2.out', round: true,
-      onUpdate: () => { el.textContent = obj.val; },
+      val: target,
+      duration: 1.6,
+      ease: 'power2.out',
+      onUpdate: () => { el.textContent = Math.round(obj.val); },
       ...(st ? { scrollTrigger: st } : {})
     });
   });
